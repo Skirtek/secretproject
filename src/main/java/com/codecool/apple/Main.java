@@ -12,10 +12,12 @@ public class Main {
         System.out.println(Car.getCostPerHundredKilometers());
         Car car2 = new Car("Ceed", 5, 2800);
         System.out.println(Car.getCostPerHundredKilometers());
-
+        logger.info("Informacja w aplikacji");
+        logger.warn("Ostrzeżenie w aplikacji");
         car2.startEngine();
         System.out.println("Number of engine of car2 is " + car2.generateEngineNumber());
 
+        logger.debug("Debug");
         logger.error("Błąd krytyczny w aplikacji");
     }
 }
