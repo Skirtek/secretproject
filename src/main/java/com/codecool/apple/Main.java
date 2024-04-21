@@ -1,19 +1,25 @@
 package com.codecool.apple;
 
 import com.codecool.apple.exceptions.CatastrophicException;
-import com.codecool.apple.exceptions.ValidationException;
 import com.codecool.apple.generics.Response;
 import com.codecool.apple.interfaces.*;
+import com.google.gson.Gson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.io.IOException;
-import java.util.Scanner;
 
 public class Main {
     private static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws CatastrophicException {
+        Gson gson = new Gson();
+
+        Car car = new Car("Electric", "TESLA", "Y");
+
+        System.out.println(gson.toJson(car));
+
+        Car carFromJson = gson.fromJson("{\"engineType\":\"Electric\",\"make\":\"TESLA\",\"model\":\"Y\"}", Car.class);
+        System.out.println(carFromJson);
+
         Response<String, Integer> response = new Response<>("", true, "Data", 1);
         System.out.println(response.getData());
         System.out.println(response.getData2());

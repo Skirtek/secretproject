@@ -1,8 +1,11 @@
 package com.codecool.apple.fortests;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,5 +31,14 @@ public class AgeCheckTests {
 
         // assert
         assertEquals(expectedValue, result);
+    }
+
+    @Test
+    public void calculatePersonRatio() {
+        // act
+        int ratio = ageCheck.calculatePersonRatio(new PersonStub());
+
+        // assert
+        assertEquals(900, ratio);
     }
 }
