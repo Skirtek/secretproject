@@ -1,5 +1,6 @@
 package com.codecool.apple.vehicles;
 
+import com.codecool.apple.common.Tuple;
 import com.codecool.apple.vehicles.parts.Engine;
 import com.codecool.apple.vehicles.parts.Seats;
 import com.codecool.apple.vehicles.parts.Tire;
@@ -39,8 +40,10 @@ public class Car {
         return carCount;
     }
 
-    public void startEngine() {
+    public Tuple<Boolean, Integer> startEngine() {
         System.out.println("Starting!");
+        
+        return new Tuple<>(true, 100);
     }
 
     public int generateEngineNumber() {
